@@ -3,6 +3,7 @@ import selectorlib
 import smtplib
 import ssl
 import os
+import time
 
 URL = "http://programmer100.pythonanywhere.com/tours/"
 HEADERS = {
@@ -56,12 +57,15 @@ def read_tours():
 
 
 if __name__ == "__main__":
-    source_text = scrape_tours(URL)
-    tours = extract_tours(source_text)
-    print(tours)
+    while True:
+        source_text = scrape_tours(URL)
+        tours = extract_tours(source_text)
+        print(tours)
 
-    all_tours = read_tours()
+        all_tours = read_tours()
 
-    if tours != "No upcoming tours" and tours not in all_tours:
-        store_tours(tours)
-        send_email(f"Subject: Music Tour\n\nHey, new event was found on:\n{tours}")
+        if tours != "No upcoming tours" and tours not in all_tours:
+            store_tours(tours)
+            send_email(f"Subject: Music Tour\n\nHey, new event was found on:\n{tours}")
+
+        time.sleep(2)
