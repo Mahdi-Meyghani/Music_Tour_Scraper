@@ -20,10 +20,23 @@ def extract_tours(source):
     """Extract a particular part from web page"""
     extractor = selectorlib.Extractor.from_yaml_file("tours.yaml")
     value = extractor.extract(source)["tours"]
+
     return value
+
+
+def send_email():
+    print("Email was sent successfully!")
+
+
+def store_tours(tour_text):
+    with open("tours.txt", "a") as tours_file:
+        tours_file.write(tour_text + "\n")
 
 
 if __name__ == "__main__":
     source_text = scrape_tours(URL)
     tours = extract_tours(source_text)
     print(tours)
+    store_tours(tours)
+    if tours != "No upcoming tours" and tours not in (list or str):
+        send_email()
