@@ -8,7 +8,7 @@ HEADERS = {
 }
 
 
-def scraper(url):
+def scrape_tours(url):
     """Scraps a web page"""
     response = requests.get(url, headers=HEADERS)
     source = response.text
@@ -16,5 +16,14 @@ def scraper(url):
     return source
 
 
+def extract_tours(source):
+    """Extract a particular part from web page"""
+    extractor = selectorlib.Extractor.from_yaml_file("tours.yaml")
+    value = extractor.extract(source)["tours"]
+    return value
+
+
 if __name__ == "__main__":
-    print(scraper(URL))
+    source_text = scrape_tours(URL)
+    tours = extract_tours(source_text)
+    print(tours)
