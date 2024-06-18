@@ -33,6 +33,13 @@ def store_tours(tour_text):
         tours_file.write(tour_text + "\n")
 
 
+def read_tours():
+    with open("tours.txt", "r") as tours_file:
+        tours_text = tours_file.read()
+
+    return tours_text
+
+
 if __name__ == "__main__":
     source_text = scrape_tours(URL)
     tours = extract_tours(source_text)
