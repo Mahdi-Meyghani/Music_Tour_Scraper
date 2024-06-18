@@ -44,6 +44,9 @@ if __name__ == "__main__":
     source_text = scrape_tours(URL)
     tours = extract_tours(source_text)
     print(tours)
-    store_tours(tours)
-    if tours != "No upcoming tours" and tours not in (list or str):
+
+    all_tours = read_tours()
+
+    if tours != "No upcoming tours" and tours not in all_tours:
+        store_tours(tours)
         send_email()
