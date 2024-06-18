@@ -29,6 +29,7 @@ def extract_tours(source):
 
 
 def send_email(message):
+    """Send an email alarm when new event is find """
     host = "smtp.gmail.com"
     port = 465
 
@@ -45,11 +46,13 @@ def send_email(message):
 
 
 def store_tours(tour_text):
+    """Save the tours info into a file"""
     with open("tours.txt", "a") as tours_file:
         tours_file.write(tour_text + "\n")
 
 
 def read_tours():
+    """Read the tours info from a file and return it as a string"""
     with open("tours.txt", "r") as tours_file:
         tours_text = tours_file.read()
 
