@@ -1,0 +1,15 @@
+certifi==2024.6.2
+charset-normalizer==3.3.2
+click==8.1.7
+colorama==0.4.6
+cssselect==1.2.0
+idna==3.7
+jmespath==1.0.1
+lxml==5.2.2
+packaging==24.1
+parsel==1.9.1
+PyYAML==6.0.1
+requests==2.32.3
+selectorlib==0.16.0
+urllib3==2.2.2
+w3lib==2.2.1
