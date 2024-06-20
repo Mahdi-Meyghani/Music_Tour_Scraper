@@ -25,7 +25,6 @@ The Band Tour Scraper App is a Python-based application designed to monitor a mu
    ```shell
    cd Music_Tour_Scraper
 
-
 3. Install the required packages:
    ```shell
    pip install -r requirements.txt
