@@ -61,6 +61,15 @@ def read_tours_file():
     return tours_text
 
 
+def store_tours_db(tours_text):
+    """Save the tours info into a database"""
+    values = tours_text.split(", ")
+
+    cursor = CONN.cursor()
+    cursor.execute("INSERT INTO events VALUES (?, ?, ?)", values)
+    CONN.commit()
+
+
 def read_tours_db(tour_text):
     """Read the tours info from database and return it as a list of tuples"""
     row = tour_text.split(", ")
@@ -80,11 +89,14 @@ if __name__ == "__main__":
         tours = extract_tours(source_text)
         print(tours)
 
+        # all_tours = read_tours_file()
+
         if tours != "No upcoming tours":
             exist = read_tours_db(tour_text=tours)
             print(exist)
             if not exist:
-                store_tours_file(tours)
+                # store_tours_file(tours)
+                store_tours_db(tours_text=tours)
                 send_email(f"Subject: Music Tour\n\nHey, new event was found on:\n{tours}")
 
         time.sleep(2)
