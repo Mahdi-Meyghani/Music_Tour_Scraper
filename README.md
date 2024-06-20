@@ -1,4 +1,4 @@
-# Band Tour Notifier App
+# Band Tour Scrapper App
 
 ## Overview
 The Band Tour Scraper App is a Python-based application designed to monitor a music band's website for new tour announcements. Upon detecting new tours, it sends out email notifications and records the tour details in both a text file and an SQLite database. The app operates continuously to ensure that users are promptly informed of any upcoming events.
