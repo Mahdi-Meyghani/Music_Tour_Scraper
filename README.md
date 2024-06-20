@@ -46,7 +46,7 @@ Before running the app, configure the following settings in `main.py` `send_emai
   receiver = "receiver@email.com"
 
 ## License
-This project is licensed under the MIT License - see the `LICENSE.md` file for details.
+This project is licensed under the Apache-2.0 license - see the `LICENSE.md` file for details.
 
 ## Acknowledgments
 - The band for their inspiring music and tours.
