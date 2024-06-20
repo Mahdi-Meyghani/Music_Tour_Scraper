@@ -39,9 +39,9 @@ To start the application, run:
 Before running the app, configure the following settings in `main.py` `send_email` function:
 - EMAIL_SETTINGS: Email configuration for sending notifications.
    ```python
-  host = "smtp.your_host.com"
-  port = "your_port"
-  username = "example@email.com"
+  host = "smtp.example.com"
+  port = 465
+  username = "your_email@email.com"
   password = "your_email_password"
   receiver = "receiver@email.com"
 
